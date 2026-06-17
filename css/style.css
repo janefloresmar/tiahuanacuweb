@@ -1,12 +1,46 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* ==========================
+   GENERAL
+========================== */
+
 body{
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    color:#333;
+    line-height:1.7;
+    background:#fff;
 }
+
+p{
+    margin-bottom:15px;
+}
+
+h1{
+    color:#003366;
+    text-align:center;
+    margin-bottom:30px;
+    font-size:40px;
+}
+
+section h2{
+    color:#003366;
+    font-size:32px;
+    margin-bottom:25px;
+    border-left:6px solid #d4a017;
+    padding-left:15px;
+}
+
+/* ==========================
+   MENU
+========================== */
 
 nav{
     background:#003366;
@@ -16,6 +50,14 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav h2{
+    color:white;
 }
 
 nav ul{
@@ -27,16 +69,35 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
+
+nav a:hover{
+    color:#f4b400;
+}
+
+/* ==========================
+   HERO PRINCIPAL
+========================== */
 
 .hero{
     height:90vh;
-    background:url('../img/7.jpeg') center/cover;
+    background:url('../img/7.jpeg') center center/cover no-repeat;
+}
+
+/* ==========================
+   HERO PAGINAS INTERNAS
+========================== */
+
+.hero-pequeno{
+    height:60vh;
+    background:url('../img/7.jpeg') center center/cover no-repeat;
 }
 
 .overlay{
     height:100%;
-    background:rgba(0,0,0,.5);
+    background:rgba(0,0,0,.55);
 
     display:flex;
     flex-direction:column;
@@ -44,115 +105,57 @@ nav a{
     align-items:center;
 
     color:white;
+    text-align:center;
+    padding:20px;
 }
+
+.overlay h1{
+    color:white;
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    max-width:800px;
+    font-size:20px;
+}
+
+/* ==========================
+   BOTONES
+========================== */
 
 .btn{
     background:#f4b400;
-    color:black;
+    color:#000;
     padding:12px 25px;
     text-decoration:none;
+    border-radius:5px;
     margin-top:20px;
+    transition:.3s;
 }
+
+.btn:hover{
+    background:#ddb000;
+}
+
+/* ==========================
+   CONTENEDORES
+========================== */
 
 .contenedor{
     width:90%;
+    max-width:1200px;
     margin:auto;
-    padding:50px 0;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    border:1px solid #ddd;
-    padding:15px;
-}
-
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
-}
-
-.galeria img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-form{
-    max-width:600px;
-    margin:auto;
-
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,select,textarea{
-    padding:12px;
-}
-
-button{
-    background:#003366;
-    color:white;
-    border:none;
-    padding:12px;
-    cursor:pointer;
-}
-
-
-.grid-2{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
-
-.grid-2 img{
-    width:100%;
-    border-radius:10px;
+    padding:60px 0;
 }
 
 .fondo-claro{
-    background:#f5f5f5;
+    background:#f7f7f7;
 }
 
-.footer-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-footer{
-    background:#003366;
-    color:white;
-    padding:40px;
-}
-
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    margin-bottom:8px;
-}
-
-
-
-.hero-pequeno{
-    height:60vh;
-    background:url('../img/portada.jpg') center center/cover;
-}
+/* ==========================
+   GRID HISTORIA
+========================== */
 
 .grid-2{
     display:grid;
@@ -167,39 +170,152 @@ footer li{
     object-fit:cover;
     border-radius:15px;
     box-shadow:0 8px 25px rgba(0,0,0,.25);
+    transition:.3s;
 }
 
-.contenedor h2{
+.grid-2 img:hover{
+    transform:scale(1.03);
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:15px 15px 5px;
     color:#003366;
-    margin-bottom:20px;
 }
 
-.fondo-claro{
-    background:#f7f7f7;
-}
-section h2{
-    color:#003366;
-    font-size:32px;
-    margin-bottom:25px;
-    border-left:6px solid #d4a017;
-    padding-left:15px;
+.card p{
+    padding:0 15px 15px;
 }
 
-section p{
-    line-height:1.8;
-    text-align:justify;
-    font-size:17px;
-} 
+/* ==========================
+   GALERIA
+========================== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.galeria img:hover{
+    transform:scale(1.03);
+}
+
+/* ==========================
+   FORMULARIOS
+========================== */
+
+form{
+    max-width:700px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    background:#003366;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#00254d;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#003366;
+    color:white;
+    padding:50px 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+footer h3{
+    color:#f4b400;
+    margin-bottom:15px;
+}
+
+footer p{
+    margin-bottom:8px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:8px;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
 
 @media(max-width:768px){
-
-    .grid-2{
-        grid-template-columns:1fr;
-    }
 
     nav{
         flex-direction:column;
         gap:15px;
+        text-align:center;
     }
 
     nav ul{
@@ -207,9 +323,31 @@ section p{
         justify-content:center;
     }
 
-    .hero-pequeno h1{
-        font-size:30px;
-        text-align:center;
+    .grid-2{
+        grid-template-columns:1fr;
     }
 
+    .overlay h1{
+        font-size:32px;
+    }
+
+    .overlay p{
+        font-size:16px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    section h2{
+        font-size:24px;
+    }
+
+    .hero{
+        height:70vh;
+    }
+
+    .hero-pequeno{
+        height:50vh;
+    }
 }
