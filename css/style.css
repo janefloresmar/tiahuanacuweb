@@ -146,3 +146,32 @@ footer ul{
 footer li{
     margin-bottom:8px;
 }
+
+
+
+.hero-pequeno{
+    height:50vh;
+    background:url('../img/portada.jpg') center center/cover;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.grid-2 img{
+    width:100%;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.contenedor h2{
+    color:#003366;
+    margin-bottom:20px;
+}
+
+.fondo-claro{
+    background:#f7f7f7;
+}
