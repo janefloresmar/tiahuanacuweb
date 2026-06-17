@@ -150,7 +150,7 @@ footer li{
 
 
 .hero-pequeno{
-    height:50vh;
+    height:60vh;
     background:url('../img/portada.jpg') center center/cover;
 }
 
@@ -163,8 +163,10 @@ footer li{
 
 .grid-2 img{
     width:100%;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    height:350px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
 }
 
 .contenedor h2{
@@ -174,4 +176,40 @@ footer li{
 
 .fondo-claro{
     background:#f7f7f7;
+}
+section h2{
+    color:#003366;
+    font-size:32px;
+    margin-bottom:25px;
+    border-left:6px solid #d4a017;
+    padding-left:15px;
+}
+
+section p{
+    line-height:1.8;
+    text-align:justify;
+    font-size:17px;
+} 
+
+@media(max-width:768px){
+
+    .grid-2{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-pequeno h1{
+        font-size:30px;
+        text-align:center;
+    }
+
 }
